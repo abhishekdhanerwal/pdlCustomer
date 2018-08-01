@@ -1,0 +1,21 @@
+<ion-view view-title="PDL Faridabad">
+  <ion-content class="padding">
+      <div class="card">
+          <div class="item item-text-wrap text-center">
+            {{currentDate|date: "dd - MMMM - yyyy" }}
+          </div>
+        </div>
+
+        <div class="spinner" ng-show="progress">
+          <ion-spinner icon="lines" class="spinner-royal"></ion-spinner>
+      </div>
+
+      <div class="list" ng-if="!progress">     
+        <label ng-repeat="row in currentDayTokens" class="item item-input">
+            <span class="input-label">{{row.time}}</span>
+            <input type="text" ng-model="row.key">
+          </label>
+      </div>
+      
+  </ion-content>
+</ion-view>
